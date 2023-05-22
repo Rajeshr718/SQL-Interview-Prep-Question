@@ -6,6 +6,10 @@ select distinct salary from employee order by salary desc limit 2, 1;
 
 select * from employee e1 where N-1 = (select distinct(salary) from employee e2 where e2.salary > e1.salary)
 
+Second Max Salary:
+
+select max(distinct salary) from employee e1 where e1.salary not in (select max(distinct salary from employee e2)
+
 ---
 
 
