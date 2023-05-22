@@ -15,42 +15,36 @@ CREATE TABLE Employee (
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 INSERT INTO Employee
 	(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT,MANAGER_ID) VALUES
-		(001, 'James', 'Smith', 100000, '17-02-20 09.00.00', 'HR', 002),
-		(002, 'Jessica', 'Kohl', 80000, '17-06-11 09.00.00', 'Admin', 005),
-		(003, 'Alex', 'Garner', 300000, '17-02-20 09.00.00', 'HR', 011),
-		(004, 'Pratik', 'Pandey', 500000, '17-02-20 09.00.00', 'Admin', 020),
-		(005, 'Christine', 'Robinson', 500000, '17-06-11 09.00.00', 'Admin', 007),
-		(006, 'Deepak', 'Gupta', 200000, '17-06-11 09.00.00', 'Account', 015),
-		(007, 'Jennifer', 'Paul', 75000, '17-01-20 09.00.00', 'Account', 012),
-		(008, 'Deepika', 'Sharma', 90000, '17-04-11 09.00.00', 'Admin', 017);
+		(001, 'James', 'Smith', 100000, '2017-02-20 09:00:00', 'HR', 002),
+		(002, 'Jessica', 'Kohl', 80000, '2017-06-11 09:00:00', 'Admin', 005),
+		(003, 'Alex', 'Garner', 300000, '2017-02-20 09:00:00', 'HR', 011),
+		(004, 'Pratik', 'Pandey', 500000, '2017-02-20 09:00:00', 'Admin', 020),
+		(005, 'Christine', 'Robinson', 500000, '2017-06-11 09:00:00', 'Admin', 007),
+		(006, 'Deepak', 'Gupta', 200000, '2017-06-11 09:00:00', 'Account', 015),
+		(007, 'Jennifer', 'Paul', 75000, '2017-01-20 09:00:00', 'Account', 012),
+		(008, 'Deepika', 'Sharma', 90000, '2017-04-11 09:00:00', 'Admin', 017);
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE Bonus (
 	EMPLOYEE_REF_ID INT,
 	BONUS_AMOUNT INT,
-	BONUS_DATE TIMESTAMP(0),
-	FOREIGN KEY (EMPLOYEE_REF_ID)
-		REFERENCES Employee(EMPLOYEE_ID)
-        ON DELETE CASCADE
+	BONUS_DATE TIMESTAMP(0)
 );
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 INSERT INTO Bonus 
 	(EMPLOYEE_REF_ID, BONUS_AMOUNT, BONUS_DATE) VALUES
-		(001, 5000, '18-02-20'),
-		(002, 3000, '18-06-11'),
-		(003, 4000, '18-02-20'),
-		(001, 4500, '18-02-20'),
-		(002, 3500, '18-06-11');
+		(001, 5000, '2018-02-20'),
+		(002, 3000, '2018-06-11'),
+		(003, 4000, '2018-02-20'),
+		(001, 4500, '2018-02-20'),
+		(002, 3500, '2018-06-11');
         
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
 CREATE TABLE Title (
 	EMPLOYEE_REF_ID INT,
 	EMPLOYEE_TITLE CHAR(25),
-	AFFECTED_FROM TIMESTAMP(0),
-	FOREIGN KEY (EMPLOYEE_REF_ID)
-		REFERENCES Employee(EMPLOYEE_ID)
-        ON DELETE CASCADE
+	AFFECTED_FROM TIMESTAMP(0)
 );
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
@@ -78,10 +72,7 @@ INSERT INTO Title
  CREATE TABLE attendance_events (
 		date_event TIMESTAMP(0),
         student_id INT,
-        attendance CHAR(20),
-        FOREIGN KEY (student_id)
-		REFERENCES all_students(student_id)
-        ON DELETE CASCADE
+        attendance CHAR(20)
  );
   
  -- SQLINES LICENSE FOR EVALUATION USE ONLY
@@ -169,16 +160,16 @@ INSERT INTO Title
  -- SQLINES LICENSE FOR EVALUATION USE ONLY
  INSERT INTO all_users
  (user_id, user_name, registration_date, active_last_month) VALUES
- (1, 'sam', '2018-01-21', 1),
- (2, 'phelp', '2018-01-15', 1),
- (3, 'peyton', '2018-03-12', 1),
- (4, 'ryan', '2018-02-17', 0),
- (5, 'james', '2018-01-21', 0),
- (6, 'christine', '2018-02-27', 1),
- (7, 'bolt', '2018-02-28', 0),
- (8, 'jessica', '2018-01-11', 1),
- (9, 'paul', '2018-04-23', 1),
- (10, 'brian', '2018-03-12', 0);
+ (1, 'sam', '2018-01-21', '1'),
+ (2, 'phelp', '2018-01-15', '1'),
+ (3, 'peyton', '2018-03-12', '1'),
+ (4, 'ryan', '2018-02-17', '0'),
+ (5, 'james', '2018-01-21', '0'),
+ (6, 'christine', '2018-02-27', '1'),
+ (7, 'bolt', '2018-02-28', '0'),
+ (8, 'jessica', '2018-01-11', '1'),
+ (9, 'paul', '2018-04-23', '1'),
+ (10, 'brian', '2018-03-12', '0');
  
  
  -- SQLINES LICENSE FOR EVALUATION USE ONLY
@@ -440,7 +431,7 @@ phone_number CHAR(15)
 );
 
 -- SQLINES LICENSE FOR EVALUATION USE ONLY
-INSERT INTO confirmation_no 
+INSERT INTO confirmed_no 
 (phone_number) VALUES
 ('232-473-3433'),
 ('545-038-2294'),
